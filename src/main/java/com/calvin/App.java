@@ -12,9 +12,7 @@ public class App
 
     public static void main( String[] args )
     {
-        for(int i = 0; i < App.REPEATS; i++) {
-            Thread thread = new ThreadWithExtends();
-            thread.start();
-        }
+        ThreadWithExtends thread = new ThreadWithExtends("Thread with Extends");
+        thread.start();
     }
 }
