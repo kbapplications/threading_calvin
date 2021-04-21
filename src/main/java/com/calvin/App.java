@@ -13,10 +13,11 @@ public class App
 
     public static void main( String[] args )
     {
-        Runnable runnable = new ThreadWithRunnable();
-        for(int i = 0; i < App.REPEATS; i++) {
+        for(int i = 1; i <= App.REPEATS; i++) {
+            Runnable runnable = new ThreadWithRunnable("Thread #" + i);
             Thread thread = new Thread(runnable);
             thread.start();
+            new ThreadWithExtends("Thread #" + i).start();
         }
     }
 }
